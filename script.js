@@ -56,5 +56,11 @@ const addToCart = function(btn){
     cart.style.backgroundColor = "red"
 }
 
-
-
+const handleSearch = async (keyEvent) => {
+    keyEvent.preventDefault();
+    const {key, target} = keyEvent;
+    // console.log(keyEvent.target.value);
+    if(key === "Enter") {
+        await renderBooks(target.value)
+    }
+}
