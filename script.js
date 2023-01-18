@@ -27,10 +27,23 @@ const renderBooks = function (books) {
 }
 
 const hideBook = function() {
+
     let cardNode = document.querySelector(".card");
+    // for (let i=0; i < cards.length; i++ ){
+    //     let cardNode = cards[i]
+    // }
+    
     if (cardNode.style.display === "none") {
         cardNode.style.display = "block";
     } else {
         cardNode.style.display = "none"
     }
 }
+
+// const hideBook = function() {
+//     let cardNode = document.querySelector(".card");
+//     cardNode.style.display = "none"
+// }
+
+// const buttonNode = document.getElementById("skipBtn");
+// buttonNode.addEventListener("click", hideBook())
