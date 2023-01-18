@@ -16,13 +16,21 @@ const renderBooks = function (books) {
             <img src="${singleBook.img}" class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">${singleBook.title}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <button type="button" class="btn btn-dark">Add to Cart</button>
-            <button type="button" class="btn btn-dark">Skip</button>
+            <button onclick="hideBook()" type="button" class="btn btn-dark">Skip</button>
             </div>
         </div>
     </div>
     `
     }).join("")
     rowDiv.innerHTML = arrayOfBooks
+}
+
+const hideBook = function() {
+    let cardNode = document.querySelector(".card");
+    if (cardNode.style.display === "none") {
+        cardNode.style.display = "block";
+    } else {
+        cardNode.style.display = "none"
+    }
 }
