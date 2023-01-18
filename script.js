@@ -16,7 +16,7 @@ const renderBooks = function (books) {
             <img src="${singleBook.img}" class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">${singleBook.title}</h5>
-            <button type="button" class="btn btn-dark">Add to Cart</button>
+            <button onclick="addToCart()" type="button" class="btn btn-dark">Add to Cart</button>
             <button onclick="hideBook()" type="button" class="btn btn-dark">Skip</button>
             </div>
         </div>
@@ -47,3 +47,14 @@ const hideBook = function() {
 
 // const buttonNode = document.getElementById("skipBtn");
 // buttonNode.addEventListener("click", hideBook())
+
+const addToCart = function(btn){
+    let cart = document.querySelector("section");
+    cart = "";
+    let cardNode = btn.closest("card");
+    cart.innerHTML += cardNode;
+    cart.style.backgroundColor = "red"
+}
+
+
+
