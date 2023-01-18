@@ -4,3 +4,4 @@ const getAllProducts = async (endpoint = "books") => {
     console.log(books)
 }
 getAllProducts()
+
