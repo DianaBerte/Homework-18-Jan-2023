@@ -1,8 +1,13 @@
 const getAllProducts = async (endpoint = "books") => {
+    try {
     let res = await fetch("https://striveschool-api.herokuapp.com/" + endpoint)
     let books = await res.json()
     // console.log(books)
     renderBooks(books)
+    } catch(err) {
+        console.log(err)
+    }
+    
 }
 getAllProducts()
 
@@ -40,6 +45,8 @@ const hideBook = function() {
     }
 }
 
+
+
 // const hideBook = function() {
 //     let cardNode = document.querySelector(".card");
 //     cardNode.style.display = "none"
@@ -48,12 +55,14 @@ const hideBook = function() {
 // const buttonNode = document.getElementById("skipBtn");
 // buttonNode.addEventListener("click", hideBook())
 
+
+
 const addToCart = function(btn){
     let cart = document.querySelector("section");
     cart = "";
     let cardNode = btn.closest("card");
     cart.innerHTML += cardNode;
-    cart.style.backgroundColor = "red"
+    // cart.style.backgroundColor = "red"
 }
 
 const handleSearch = async (keyEvent) => {
@@ -64,3 +73,9 @@ const handleSearch = async (keyEvent) => {
         await renderBooks(target.value)
     }
 }
+
+// let searchQuery;
+
+// const handleSearchQuery = (e) => {
+//     searchQuery = e.target.value.toLowerCase();
+// };
