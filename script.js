@@ -7,7 +7,7 @@ const getAllProducts = async (endpoint = "books") => {
 getAllProducts()
 
 const renderBooks = function (books) {
-    let containerDiv = document.querySelector(".container")
+    // let containerDiv = document.querySelector(".container")
     let rowDiv = document.querySelector(".row")
     let arrayOfBooks = books.map((singleBook) => {
         return ` 
@@ -17,8 +17,8 @@ const renderBooks = function (books) {
             <div class="card-body">
             <h5 class="card-title">${singleBook.title}</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button>Add to Cart</button>
-            <button>Skip</button>
+            <button type="button" class="btn btn-dark">Add to Cart</button>
+            <button type="button" class="btn btn-dark">Skip</button>
             </div>
         </div>
     </div>
